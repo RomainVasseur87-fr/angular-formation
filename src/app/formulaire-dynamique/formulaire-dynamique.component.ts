@@ -10,7 +10,23 @@ export class FormulaireDynamiqueComponent implements OnInit {
   TeamForm: FormGroup;
 
   constructor( private fb: FormBuilder) { 
-    
+    this.TeamForm = this.fb.group({
+      membres : this.fb.array([
+        this.fb.control('')
+      ])
+    })
+  };
+
+  get members(): FormArray {
+    return this.TeamForm.get("membres")as FormArray;
+  };
+
+  addMembre = () => {
+    this.members.push(this.fb.control(''));
+  };
+
+  soumettre = () => {
+    console.log(this.TeamForm.value);
   }
 
   ngOnInit(): void {
