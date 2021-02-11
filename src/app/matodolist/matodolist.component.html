@@ -1,0 +1,66 @@
+<div>
+    <input type="text" [(ngModel)]="nom">
+    <button class="btn btn-primary" (click)="ajouterTache()"> bouton ajouter </button>
+</div>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col"> nom </th>
+            <th scope="col"> etat </th>
+            <th scope="col"> supprimer </th>
+        </tr>
+    </thead>
+    <tbody *ngFor="let tache of taches">
+        <tr>
+            <th scope="row">{{tache.index}}</th>
+            <td>
+                <ng-template [ngIf]="!tache.modification">{{ tache.nom }}</ng-template>
+                <ng-template [ngIf]="tache.modification"><input type="text" class="form-control form-control-sm w-50"
+                        [(ngModel)]="tache.nom"></ng-template>
+                <button class="btn btn-success" (click)="modifiernomTache(tache.index)"> Modif </button>
+            </td>
+            <td>
+                {{tache.etat}}
+                <button class="btn btn-secondary" (click)="modifierEtatTache(tache.index)"> Modif </button>
+            </td>
+            <td>
+                <button class="btn btn-danger" (click)="supprimerTache(tache.index)"> tache à supprimer </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+
+
+<div class="container">
+    <div class="row border">
+        <div class="col-sm-6"> Taches à faire :</div>
+        <div class="col-sm-6"> Taches terminées :</div>
+    </div>
+
+    <div class="row border" *ngFor="let tache of taches">
+        <div class="col-sm-6">
+            <ng-template [ngIf]="tache.status == true">
+                {{tache.nom}}, {{tache.status}}
+            </ng-template>
+        </div>
+        <div class="col-sm-6">
+            <ng-template [ngIf]="tache.status == false">
+                {{tache.nom}}, {{tache.status}}
+            </ng-template>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+<!-- balise ng-template avec ngif = conditon 1 ngifelse = tag de la condition2  -->
+
+<!-- <ng-template [ngIf] = "condition == true" [ngIfElse] = "notTrue">
+        code si vrai 
+    </ng-template>
+    <ng-template #notTrue>
+        code si faux 
+    </ng-template> -->

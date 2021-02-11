@@ -1,0 +1,45 @@
+<h1> ceci est mon composant personne</h1>
+<p>personne works!</p>
+<!-- interpolation = recuperer du typescript est le mettre en html. utilise les {{champs à recup}}-->
+<p> son nom est : {{ nom }} </p>
+<!-- pour appeler champs d'un tableau utilisé une *ngFor dans la balise p -->
+<p *ngFor="let user of users">
+    nom: {{user.name}},
+    age: {{user.age }} ans
+    <button (click)="hello(user.name)"> je suis un bouton qui salut </button>
+</p>
+<!-- le properties binging en utilisant des [] -->
+<div id="img">
+    <img [src]="img" alt="img de chat">
+</div>
+<!-- event binding : execute une fonction quand il y a un event sur ma page html-->
+<button (click)="hello()"> je suis un bouton </button>
+<!-- le two way data binding qui est un melange du proprties binding et du event binding-->
+{{message}}
+<!-- methode 1 -->
+<div>
+    <input type="text" [value]="message" (input)="message=$event.target.value">
+</div>
+<!-- methode 2 -->
+<div>
+    <input type="text" [ngModel]="message" (ngModelChange) = "message=$event">
+</div>
+<!-- methode 3 (la plus recommendé)-->
+<div>
+    <input type="text" [(ngModel)]="message">
+</div>
+<!-- les pipes (altGR+6) (pas une bonne pratique mais pratique) -->
+<div>
+    <!-- pipe de carractere -->
+    <p>{{message | uppercase}}</p>
+    <!-- pipe de nombre:'nb avant la virgule, nb apres la virgule min-max' -->
+    <p>{{nombre | number:'2.1-3'}}</p>
+    <p>{{pourcent | percent}}</p>
+    <p>{{date | date}}</p>
+    <p>{{date | date:'dd/MM/yyyy'}}</p>
+    <p>{{date | date:'shortTime'}}</p>
+    <!-- conversion en json -->
+    <p>{{user | json}}</p>
+
+
+</div>
