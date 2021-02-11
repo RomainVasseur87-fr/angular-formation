@@ -1,0 +1,39 @@
+<h2> Correction de l'exercice composant </h2>
+<!-- faire une todoliste / faire CRUD/ modifier etat -->
+
+<!-- ma tache : id, task, statut -->
+<div class="container ">
+    <div class="row">
+        <div class="col-sm-6 border"> taches à faire </div>
+        <div class="col-sm-6 border"> taches terminés</div>
+    </div>
+    <div class="row border" *ngFor=" let task of tab">
+        <div class="col-sm-6 border">
+            <div *ngIf="task.update == false">
+                <div *ngIf="task.state == false">
+                    {{task.task}}
+                    <button (click)="delete(task.id)"> X </button>
+                    <button (click)="check(task)"> fait </button>
+                    <button (click)="update(task)"> modif </button>
+                </div>
+            </div>
+            <!-- pour modifier la tache -->
+            <div *ngIf="task.update == true">
+                <input type="text" [(ngModel)] = task.task (keydown.enter)="update(task)">
+            </div>
+        </div>
+        <div class="col-sm-6 border">
+            <div *ngIf="task.state == true">
+                {{task.task}}
+                <button (click)="delete(task.id)"> X </button>
+                <button (click)="check(task)"> à refaire </button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- creation d'une nouvelle tache -->
+<!-- placeholder permet d'afficher un message en fond -->
+<!-- recupere l'input text par le #task -->
+<input type="text" placeholder="entrer une nouvelle tache" #task (keydown.enter)="add(task)">

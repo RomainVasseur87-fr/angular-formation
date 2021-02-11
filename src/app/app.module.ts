@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { PersonneComponent } from './personne/personne.component';
 import {​​​​ FormsModule }​​​​ from '@angular/forms';
 import { MatodolistComponent } from './matodolist/matodolist.component';
+import { TodocorrectionComponent } from './todocorrection/todocorrection.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PersonneComponent,
-    MatodolistComponent
+    MatodolistComponent,
+    TodocorrectionComponent
   ],
   imports: [
     BrowserModule,

@@ -73,7 +73,7 @@ export class MatodolistComponent implements OnInit {
 
   /**
    * fonction pour supprmer une tache.
-   * @param id 
+   * @param id  de la tache à supprimer
    */
   supprimerTache = (id:number) =>{
     let suppTache = this.trouverTache(id);
