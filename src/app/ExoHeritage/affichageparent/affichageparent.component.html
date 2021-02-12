@@ -1,0 +1,8 @@
+<p>affichageparent works!</p>
+
+<div *ngFor="let user of tabUser">
+    <div>
+        {{user.nom}}, {{user.prenom}},{{user.age}}
+    </div>
+</div>
+<app-formulaire-enfant (newUtilisateur)="addParent($event)" ></app-formulaire-enfant>

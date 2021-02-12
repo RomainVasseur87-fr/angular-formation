@@ -11,6 +11,8 @@ import { FormulaireDeBaseComponent } from './formulaire-de-base/formulaire-de-ba
 import { FormulaireDynamiqueComponent } from './formulaire-dynamique/formulaire-dynamique.component';
 import { ParentComponent } from './heritage/parent/parent.component';
 import { EnfantComponent } from './heritage/enfant/enfant.component';
+import { AffichageparentComponent } from './ExoHeritage/affichageparent/affichageparent.component';
+import { FormulaireEnfantComponent } from './ExoHeritage/formulaire-enfant/formulaire-enfant.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { EnfantComponent } from './heritage/enfant/enfant.component';
     FormulaireDeBaseComponent,
     FormulaireDynamiqueComponent,
     ParentComponent,
-    EnfantComponent
+    EnfantComponent,
+    AffichageparentComponent,
+    FormulaireEnfantComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,21 @@
+<p>formulaire-enfant works!</p>
+
+<form (ngSubmit)="soumettre()" [formGroup]="userProfileForm">
+
+    <label for=""> nom :
+        <input type="text"
+        formControlName="nom">
+    </label>
+
+    <label for=""> prenom :
+        <input type="text"
+        formControlName="prenom">
+    </label>
+
+    <label for=""> age :
+        <input type="text"
+        formControlName="age">
+    </label>
+
+    <button class="btn btn-success" type="submit"> validation </button>
+</form>
