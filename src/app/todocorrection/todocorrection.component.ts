@@ -1,6 +1,7 @@
 import { parseI18nMeta } from '@angular/compiler/src/render3/view/i18n/meta';
 import { Component, OnInit } from '@angular/core';
 import { discardPeriodicTasks } from '@angular/core/testing';
+import { UserService } from '../user.service';
 import { Task } from './task'
 
 @Component({
@@ -12,9 +13,11 @@ export class TodocorrectionComponent implements OnInit {
 
   tab: Task[] = [
     { id: Date.now(), task: "repasser", state: false, update:false}
-  ]
+  ];
 
-  constructor() { }
+  message:string;
+
+  constructor(private service: UserService) { }
 
   //methode
   /**
@@ -55,10 +58,23 @@ export class TodocorrectionComponent implements OnInit {
       task.update = false;
     }
   }
+  // fonction qui recupere la fonction get message de service.
+  getMessage = () => {
+    this.message = this.service.getMessageService();
+  }
+
+  getPost =() => {
+    return this.service.getPost();
+  }
 
 
 
   ngOnInit(): void {
+    this.getMessage();
+    console.log(this.message);
+
+    this.getPost();
+    
   }
 
 }
