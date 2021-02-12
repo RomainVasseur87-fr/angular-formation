@@ -4,11 +4,15 @@ import { ErrorComponent } from './error/error.component';
 import { AffichageparentComponent } from './ExoHeritage/affichageparent/affichageparent.component';
 import { FormulaireDeBaseComponent } from './formulaire-de-base/formulaire-de-base.component';
 import { FormulaireDynamiqueComponent } from './formulaire-dynamique/formulaire-dynamique.component';
+import { MatodolistComponent } from './matodolist/matodolist.component';
+import { PersonneComponent } from './personne/personne.component';
 import { TodocorrectionComponent } from './todocorrection/todocorrection.component';
 
 const routes: Routes = [
   // creation de la route de base avec son path puis du composant de base qui s'affiche
-  {path: "", component : TodocorrectionComponent},
+  {path: "", component : PersonneComponent},
+  {path: "matodoliste", component : MatodolistComponent},
+  {path: "todocorrection", component : TodocorrectionComponent},
   {path: "heritage", component : AffichageparentComponent},
   // on peut appeler des pages dans des autres pagesavec fonction children
   {path:"formulaire", component :FormulaireDeBaseComponent, 
