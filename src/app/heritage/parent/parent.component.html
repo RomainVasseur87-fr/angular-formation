@@ -3,7 +3,10 @@
 <!-- un composant peut etre appeler plusieur fois -->
 <app-enfant></app-enfant>
 <app-enfant></app-enfant>
-<app-enfant></app-enfant>
 
 <!-- donne attribut au composant fis bindé avec [name] -->
 <app-enfant [tableau]="tab"></app-enfant>
+<!-- un meme composant peut recevoir des attribut differents -->
+<app-enfant [tableau]="tab2"></app-enfant>
+<!-- recevoir un event de l'enfant chez le parents en creant fonction d'evenement ici add qui recois event de l'enfant -->
+<app-enfant [tableau]="tab" (newUser)="addParent($event)"></app-enfant>

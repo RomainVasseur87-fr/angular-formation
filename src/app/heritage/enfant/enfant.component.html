@@ -2,6 +2,13 @@
 <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, ea quae officiis nostrum quidem magni provident illo cum, commodi, nesciunt possimus amet. Optio dolore rem illo culpa. Delectus, sapiente consectetur.</p>
 
 <div *ngFor="let user of tableau">
-    {{user.name}}
-
+    <div *ngIf="user.name">
+        {{user.name}}
+    </div>
+    <div *ngIf="!user.name">
+        {{user}}
+    </div>
+</div>
+<div>
+    <button (click)="addEnfant()"> Ne pas appuyer!!! </button>
 </div>
