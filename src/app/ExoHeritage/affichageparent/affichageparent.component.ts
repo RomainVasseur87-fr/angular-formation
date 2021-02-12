@@ -8,7 +8,7 @@ import { Utilisateur} from '../Iutilisateur'
 })
 export class AffichageparentComponent implements OnInit {
 
-  tabUser = [
+  tabUser:Utilisateur[] = [
     {nom:"Bidouille", prenom:"bob",age:42},
     {nom:"Basard", prenom:"hasard",age:33},
   ]
