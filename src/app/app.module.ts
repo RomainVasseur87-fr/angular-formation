@@ -9,6 +9,8 @@ import { MatodolistComponent } from './matodolist/matodolist.component';
 import { TodocorrectionComponent } from './todocorrection/todocorrection.component';
 import { FormulaireDeBaseComponent } from './formulaire-de-base/formulaire-de-base.component';
 import { FormulaireDynamiqueComponent } from './formulaire-dynamique/formulaire-dynamique.component';
+import { ParentComponent } from './heritage/parent/parent.component';
+import { EnfantComponent } from './heritage/enfant/enfant.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +19,9 @@ import { FormulaireDynamiqueComponent } from './formulaire-dynamique/formulaire-
     MatodolistComponent,
     TodocorrectionComponent,
     FormulaireDeBaseComponent,
-    FormulaireDynamiqueComponent
+    FormulaireDynamiqueComponent,
+    ParentComponent,
+    EnfantComponent
   ],
   imports: [
     BrowserModule,

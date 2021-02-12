@@ -20,11 +20,15 @@ export class FormulaireDynamiqueComponent implements OnInit {
   get members(): FormArray {
     return this.TeamForm.get("membres")as FormArray;
   };
-
+  /**
+   * methode pour ajouter un membre
+   */
   addMembre = () => {
     this.members.push(this.fb.control(''));
   };
-
+  /**
+   * methode pour soumettre le formulaire
+   */
   soumettre = () => {
     console.log(this.TeamForm.value);
   }
